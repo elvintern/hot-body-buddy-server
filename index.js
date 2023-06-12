@@ -30,6 +30,8 @@ const startServer = async () => {
   }
 };
 
+startServer();
+
 // import express from 'express';
 // import * as dotenv from 'dotenv';
 // import cors from 'cors';
@@ -67,5 +69,3 @@ const startServer = async () => {
 //     console.log(error);
 //   }
 // };
-
-// startServer();
