@@ -30,13 +30,13 @@
 //   }
 // };
 
-// startServer();
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './mongodb/connect.js';
 import quoteRoutes from './routes/quoteRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import path from 'path';
 
 dotenv.config();
 
@@ -55,7 +55,7 @@ app.get('/', async (req, res) => {
 // Serve the service worker with the correct MIME type
 app.get('/serviceWorker.js', (req, res) => {
   res.setHeader('Content-Type', 'application/javascript');
-  res.sendFile(__dirname + '/serviceWorker.js');
+  res.sendFile(path.join(__dirname, 'client', 'serviceWorker.js'));
 });
 
 const startServer = async () => {
