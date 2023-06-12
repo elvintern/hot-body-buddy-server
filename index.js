@@ -50,7 +50,7 @@ app.use('/api/v1/user', userRoutes);
 
 app.get('/serviceWorker.js', (req, res) => {
   res.setHeader('Content-Type', 'application/javascript');
-  res.sendFile(path.join(__dirname, '../client/build/serviceWorker.js'));
+  res.sendFile(path.join(__dirname, '../client/dist/serviceWorker.js'));
 });
 
 app.get('/', async (req, res) => {
