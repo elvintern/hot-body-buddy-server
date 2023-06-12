@@ -52,10 +52,9 @@ app.get('/', async (req, res) => {
   res.send('Happy Coding!!');
 });
 
-// Serve the service worker with the correct MIME type
 app.get('/serviceWorker.js', (req, res) => {
   res.setHeader('Content-Type', 'application/javascript');
-  res.sendFile(path.join(__dirname, 'client', 'serviceWorker.js'));
+  res.sendFile(path.join(__dirname, '../client/build/serviceWorker.js'));
 });
 
 const startServer = async () => {
