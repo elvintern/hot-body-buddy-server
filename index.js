@@ -48,13 +48,13 @@ app.use(express.json({ limit: '50mb' }));
 app.use('/api/v1/quote', quoteRoutes);
 app.use('/api/v1/user', userRoutes);
 
-app.get('/', async (req, res) => {
-  res.send('Happy Coding!!');
-});
-
 app.get('/serviceWorker.js', (req, res) => {
   res.setHeader('Content-Type', 'application/javascript');
   res.sendFile(path.join(__dirname, '../client/build/serviceWorker.js'));
+});
+
+app.get('/', async (req, res) => {
+  res.send('Happy Coding!!');
 });
 
 const startServer = async () => {
